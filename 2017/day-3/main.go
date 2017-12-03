@@ -78,28 +78,30 @@ func getBiggerThanInput(i int) int {
 	for true {
 		var sum int
 		currentCoards := getSpiralCoards(counter)
-		startingCoards := currentCoards
-		currentCoards.x++
-		sum = sum + valueMap[currentCoards]
-		currentCoards.y++
-		sum = sum + valueMap[currentCoards]
-		currentCoards.x--
-		sum = sum + valueMap[currentCoards]
-		currentCoards.x--
-		sum = sum + valueMap[currentCoards]
-		currentCoards.y--
-		sum = sum + valueMap[currentCoards]
-		currentCoards.y--
-		sum = sum + valueMap[currentCoards]
-		currentCoards.x++
-		sum = sum + valueMap[currentCoards]
-		currentCoards.x++
-		sum = sum + valueMap[currentCoards]
-		valueMap[startingCoards] = sum
+		adjPos := getAdjacentPositions(currentCoards)
+		for _, x := range adjPos {
+			sum = sum + valueMap[x]
+		}
+		valueMap[currentCoards] = sum
 		if sum > i {
 			return sum
 		}
 		counter++
 	}
 	return 0
+}
+
+func getAdjacentPositions(i coards) []coards {
+	out := []coards{}
+	for x := -1; x <= 1; x++ {
+		for y := -1; y <= 1; y++ {
+			c := i
+			c.x = c.x + x
+			c.y = c.y + y
+			if c != i {
+				out = append(out, c)
+			}
+		}
+	}
+	return out
 }

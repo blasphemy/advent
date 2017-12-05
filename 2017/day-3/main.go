@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 const (
@@ -10,11 +11,15 @@ const (
 )
 
 func main() {
+	t := time.Now()
 	coardinates := getSpiralCoards(challengeInput)
 	answer1 := getStepsBack(coardinates)
+	d1 := time.Since(t)
+	t = time.Now()
 	answer2 := getBiggerThanInput(challengeInput)
-	fmt.Printf("Part 1: %d\n", answer1)
-	fmt.Printf("Part 2: %d\n", answer2)
+	d2 := time.Since(t)
+	fmt.Printf("Part 1: %d (in %s)\n", answer1, d1)
+	fmt.Printf("Part 2: %d (in %s)\n", answer2, d2)
 }
 
 type coards struct {

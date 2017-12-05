@@ -6,6 +6,7 @@ import (
 	"log"
 	"sort"
 	"strings"
+	"time"
 )
 
 type version int
@@ -22,9 +23,13 @@ func main() {
 	}
 	challengeInput := string(inputBytes)
 	rows := strings.Split(challengeInput, "\n")
+	t := time.Now()
 	answer1 := countSecurePhrases(rows, v1)
+	d1 := time.Since(t)
+	t = time.Now()
 	answer2 := countSecurePhrases(rows, v2)
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
+	d2 := time.Since(t)
+	fmt.Printf("Part 1: %d (in %s)\nPart 2: %d (in %s)\n", answer1, d1, answer2, d2)
 }
 
 func countSecurePhrases(in []string, v version) int {

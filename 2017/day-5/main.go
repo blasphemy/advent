@@ -6,6 +6,7 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -15,10 +16,14 @@ func main() {
 	}
 	rows := inputToIntSlice(string(inputBytes))
 	rows2 := inputToIntSlice(string(inputBytes))
+	t := time.Now()
 	answer1 := countStepsOut(rows)
-	fmt.Printf("Part 1: %d\n", answer1)
+	d1 := time.Since(t)
+	t = time.Now()
 	answer2 := countStepsOutV2(rows2)
-	fmt.Printf("Part 2: %d\n", answer2)
+	d2 := time.Since(t)
+	fmt.Printf("Part 1: %d (in %s)\n", answer1, d1)
+	fmt.Printf("Part 2: %d (in %s)\n", answer2, d2)
 }
 
 func inputToIntSlice(in string) []int {

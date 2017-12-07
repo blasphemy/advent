@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
+	"time"
 )
 
 type process struct {
@@ -19,12 +20,14 @@ var (
 )
 
 func main() {
+	startTime := time.Now()
 	inputBytes, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
 	rootName, amount := getAnswers(string(inputBytes))
-	fmt.Printf("Part 1: %s\nPart 2: %d\n", rootName, amount)
+	duration := time.Since(startTime)
+	fmt.Printf("Part 1: %s\nPart 2: %d\nRuntime: %s\n", rootName, amount, duration)
 }
 
 func getAnswers(in string) (string, int) {

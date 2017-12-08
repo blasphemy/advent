@@ -15,6 +15,12 @@ type process struct {
 	parent   *process
 }
 
+type parsedLine struct {
+	name     string
+	weight   int
+	children []string
+}
+
 var (
 	processes = make(map[string]*process)
 )
@@ -40,35 +46,38 @@ func getAnswers(in string) (string, int) {
 	return root.name, balanceAmount
 }
 
+func parseLine(in string) parsedLine {
+	out := parsedLine{}
+	split := strings.Split(in, "->")
+	partOne := strings.TrimPrefix(split[0], " ")
+	fmt.Sscanf(partOne, "%s (%d)", &out.name, &out.weight)
+	if len(split) > 1 {
+		childString := strings.TrimPrefix(split[1], " ")
+		splitChild := strings.Split(childString, " ")
+		for _, x := range splitChild {
+			x = strings.TrimSuffix(x, ",")
+			out.children = append(out.children, x)
+		}
+	}
+	return out
+}
+
 func initProcesses(in []string) {
 	for _, x := range in {
-		split := strings.Split(x, "->")
-		s := strings.TrimSuffix(split[0], " ")
-		name := ""
-		weight := 0
-		fmt.Sscanf(s, "%s (%d)", &name, &weight)
-		initProcess(name, weight)
+		p := parseLine(x)
+		initProcess(p.name, p.weight)
 	}
 }
 
 func initChildren(in []string) {
-	workingSet := []string{}
 	for _, x := range in {
-		split := strings.Split(x, " ")
-		if len(split) > 2 {
-			workingSet = append(workingSet, x)
+		parsed := parseLine(x)
+		if len(parsed.children) == 0 {
+			continue
 		}
-	}
-	for _, x := range workingSet {
-		pSplit := strings.Split(x, " ")
-		parent := pSplit[0]
-		parent = strings.TrimPrefix(parent, "\t")
-		split := strings.Split(x, "->")
-		children := strings.Split(strings.TrimPrefix(split[1], " "), " ")
-		for _, y := range children {
-			childname := strings.TrimSuffix(y, ",")
-			parentProcess := processByName(parent)
-			childProcess := processByName(childname)
+		for _, y := range parsed.children {
+			parentProcess := processByName(parsed.name)
+			childProcess := processByName(y)
 			parentProcess.addChild(childProcess)
 		}
 	}

@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
+	"time"
 )
 
 type instruction struct {
@@ -17,12 +18,14 @@ type instruction struct {
 }
 
 func main() {
+	t := time.Now()
 	inputBytes, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
 	answer1, answer2 := runInstructions(string(inputBytes))
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
+	d := time.Since(t)
+	fmt.Printf("Part 1: %d\nPart 2: %d\nFinished in: %s\n", answer1, answer2, d)
 }
 
 func runInstructions(in string) (int, int) {
@@ -32,8 +35,7 @@ func runInstructions(in string) (int, int) {
 	for _, x := range lines {
 		inst := lineToInstruction(x)
 		if evaluateInstruction(inst, registers) {
-			executeInstruction(inst, registers)
-			testMax := getMax(registers)
+			testMax := executeInstruction(inst, registers)
 			if testMax > max {
 				max = testMax
 			}
@@ -68,13 +70,14 @@ func evaluateInstruction(i instruction, data map[string]int) bool {
 	return false
 }
 
-func executeInstruction(i instruction, data map[string]int) {
+func executeInstruction(i instruction, data map[string]int) int {
 	switch i.targetOp {
 	case "inc":
 		data[i.target] += i.targetAmount
 	case "dec":
 		data[i.target] -= i.targetAmount
 	}
+	return data[i.target]
 }
 
 func getMax(data map[string]int) int {

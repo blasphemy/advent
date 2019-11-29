@@ -1,8 +1,6 @@
-package day2
+package y2015d2
 
 import (
-	"fmt"
-	"io/ioutil"
 	"log"
 	"sort"
 	"strconv"
@@ -13,18 +11,6 @@ type dimensions struct {
 	l int
 	w int
 	h int
-}
-
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	challengeInput := string(inputBytes)
-	answer1 := getTotalAreaFromInput(challengeInput)
-	answer2 := getTotalRibbonFromInput(challengeInput)
-	fmt.Printf("Part 1: %d\n", answer1)
-	fmt.Printf("Part 2: %d\n", answer2)
 }
 
 func Answer1(i string) int {

@@ -1,4 +1,4 @@
-package day2
+package y2015d2
 
 const Challenge = `3x11x24
 13x5x19

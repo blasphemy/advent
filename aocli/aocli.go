@@ -18,10 +18,11 @@ func main() {
 	year := arg[0]
 	day := arg[1]
 	part := arg[2]
-	ans, err := aocommon.ExecuteDefault(year,day,part)
+	ans, err,dur := aocommon.ExecuteDefault(year,day,part)
 	if err != nil {
 		log.Println(err.Error())
 		os.Exit(1)
 	}
 	log.Printf("Answer: %d", ans)
+	log.Printf("Finished in: %s", dur)
 }

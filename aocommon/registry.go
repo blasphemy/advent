@@ -18,16 +18,16 @@ func registerWithInput(year,day,part int,input string, answerfunc AOCFunc) {
 	ys := strconv.Itoa(year)
 	ds := strconv.Itoa(day)
 	ps := strconv.Itoa(part)
-	RegisterAOCFunc(ys,ds,ps, answerfunc)
-	RegisterAOCInput(ys,ds,ps,input)
+	registerAOCFunc(ys,ds,ps, answerfunc)
+	registerAOCInput(ys,ds,ps,input)
 }
 
-func RegisterAOCFunc(year,day,part string, answerfunc AOCFunc) {
+func registerAOCFunc(year,day,part string, answerfunc AOCFunc) {
 	key := getKey(year,day,part)
 	funcRegistry[key] = answerfunc
 }
 
-func RegisterAOCInput(year,day,part,input string) {
+func registerAOCInput(year,day,part,input string) {
 	key := getKey(year,day,part)
 	aocInputs[key] = input
 }

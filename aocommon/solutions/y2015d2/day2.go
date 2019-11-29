@@ -1,18 +1,18 @@
 package y2015d2
 
 import (
-	"log"
 	"aoc2/aocommon/solutions"
+	"log"
 	"sort"
 	"strconv"
 	"strings"
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 2015, 
-	Day: 2,
-	Answer1Func: getTotalAreaFromInput,
-	Answer2Func: getTotalRibbonFromInput,
+	Year:         2015,
+	Day:          2,
+	Answer1Func:  getTotalAreaFromInput,
+	Answer2Func:  getTotalRibbonFromInput,
 	DefaultInput: Challenge,
 }
 

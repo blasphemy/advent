@@ -22,7 +22,7 @@ func registerSolution(solution solutions.AOCSolution) {
 	}
 	if solution.Answer2Func == nil {
 		panic("Solution missing answer2func")
-	
+
 	}
 	if solution.DefaultInput == "" {
 		panic("Solution missing default input")

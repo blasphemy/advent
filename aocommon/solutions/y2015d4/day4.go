@@ -1,19 +1,19 @@
 package y2015d4
 
 import (
-	"crypto/md5"
 	"aoc2/aocommon/solutions"
+	"crypto/md5"
 	"fmt"
 	"strconv"
 	"strings"
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 2015,
-	Day: 4,
+	Year:         2015,
+	Day:          4,
 	DefaultInput: "bgvyzdsv",
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 func a1(in string) int {

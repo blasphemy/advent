@@ -1,15 +1,15 @@
 package y2015d1
 
 import (
-	"strings"
 	"aoc2/aocommon/solutions"
+	"strings"
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 2015,
-	Day: 1,
-	Answer1Func: Answer1,
-	Answer2Func: Answer2,
+	Year:         2015,
+	Day:          1,
+	Answer1Func:  Answer1,
+	Answer2Func:  Answer2,
 	DefaultInput: Challenge,
 }
 

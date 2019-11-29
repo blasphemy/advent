@@ -1,4 +1,4 @@
-package main
+package day2
 
 import (
 	"fmt"
@@ -25,6 +25,14 @@ func main() {
 	answer2 := getTotalRibbonFromInput(challengeInput)
 	fmt.Printf("Part 1: %d\n", answer1)
 	fmt.Printf("Part 2: %d\n", answer2)
+}
+
+func Answer1(i string) int {
+	return getTotalAreaFromInput(i)
+}
+
+func Answer2(i string) int {
+	return getTotalRibbonFromInput(i)
 }
 
 func getTotalAreaFromInput(i string) int {

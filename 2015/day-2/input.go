@@ -1,4 +1,6 @@
-3x11x24
+package day2
+
+const Challenge = `3x11x24
 13x5x19
 1x9x27
 24x8x21
@@ -997,4 +999,4 @@
 29x11x20
 3x12x15
 24x25x17
-14x6x11
+14x6x11`

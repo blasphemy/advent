@@ -39,3 +39,11 @@ func getInput(key AOCKey) string {
 	i := aocInputs[key]
 	return i
 }
+
+func AOCAvailable() []AOCKey {
+	keys := []AOCKey{}
+	for x := range(funcRegistry) {
+		keys = append(keys,x)
+	}
+	return keys
+}

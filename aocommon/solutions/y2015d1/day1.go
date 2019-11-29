@@ -1,4 +1,4 @@
-package day1
+package y2015d1
 
 import (
 	"strings"

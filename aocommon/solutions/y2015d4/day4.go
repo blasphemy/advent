@@ -1,18 +1,27 @@
-package main
+package y2015d4
 
 import (
 	"crypto/md5"
+	"aoc2/aocommon/solutions"
 	"fmt"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	challengeInput := "bgvyzdsv"
-	answer1 := getKeyForInput(challengeInput, "00000")
-	fmt.Printf("Part 1: %d\n", answer1)
-	answer2 := getKeyForInput(challengeInput, "000000")
-	fmt.Printf("Part 2: %d\n", answer2)
+var Solution = solutions.AOCSolution{
+	Year: 2015,
+	Day: 4,
+	DefaultInput: "bgvyzdsv",
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
+
+func a1(in string) int {
+	return getKeyForInput(in, "00000")
+}
+
+func a2(in string) int {
+	return getKeyForInput(in, "000000")
 }
 
 //This is probably the slowest possible way to do this in go, but oh well.

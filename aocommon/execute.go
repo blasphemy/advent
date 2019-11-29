@@ -3,11 +3,15 @@ package aocommon
 import "time"
 
 func ExecuteDefault(year, day, part string) (int, time.Duration, error) {
-	f, err := getFunc(year, day, part)
+	k, err := getKeyFromStrings(year,day,part)
+	if err != nil {
+		return 0,0, err
+	}
+	f, err := getFunc(k)
 	if err != nil {
 		return 0, 0, err
 	}
-	in := getInput(year, day, part)
+	in := getInput(k)
 	sTime := time.Now()
 	ans := f(in)
 	finTime := time.Since(sTime)
@@ -15,7 +19,11 @@ func ExecuteDefault(year, day, part string) (int, time.Duration, error) {
 }
 
 func ExecuteInput(year, day, part, input string) (int, time.Duration, error) {
-	f, err := getFunc(year, day, part)
+	k, err := getKeyFromStrings(year,day,part)
+	if err != nil {
+		return 0,0,err
+	}
+	f, err := getFunc(k)
 	if err != nil {
 		return 0, 0, err
 	}

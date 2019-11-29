@@ -2,38 +2,32 @@ package aocommon
 
 import "errors"
 
-import "strconv"
 
-var funcRegistry map[string]AOCFunc
-var aocInputs map[string]string //example inputs
+var funcRegistry map[AOCKey]AOCFunc
+var aocInputs map[AOCKey]string //example inputs
 
 func InitRegistry() {
-	funcRegistry = make(map[string]AOCFunc)
-	aocInputs = make(map[string]string)
+	funcRegistry = make(map[AOCKey]AOCFunc)
+	aocInputs = make(map[AOCKey]string)
 	importFuncs()
 }
 
 func registerWithInput(year, day, part int, input string, answerfunc AOCFunc) {
 	//this one takes ints to make it easier on me
-	ys := strconv.Itoa(year)
-	ds := strconv.Itoa(day)
-	ps := strconv.Itoa(part)
-	registerAOCFunc(ys, ds, ps, answerfunc)
-	registerAOCInput(ys, ds, ps, input)
+	k := getKey(year,day,part)
+	registerAOCFunc(k, answerfunc)
+	registerAOCInput(k, input)
 }
 
-func registerAOCFunc(year, day, part string, answerfunc AOCFunc) {
-	key := getKey(year, day, part)
+func registerAOCFunc(key AOCKey, answerfunc AOCFunc) {
 	funcRegistry[key] = answerfunc
 }
 
-func registerAOCInput(year, day, part, input string) {
-	key := getKey(year, day, part)
+func registerAOCInput(key AOCKey, input string) {
 	aocInputs[key] = input
 }
 
-func getFunc(year, day, part string) (AOCFunc, error) {
-	key := getKey(year, day, part)
+func getFunc(key AOCKey) (AOCFunc, error) {
 	f, ok := funcRegistry[key]
 	if !ok {
 		e := errors.New("Function Does Not Exist")
@@ -42,12 +36,7 @@ func getFunc(year, day, part string) (AOCFunc, error) {
 	return f, nil
 }
 
-func getKey(year, day, part string) string {
-	return year + "-" + day + "-" + part
-}
-
-func getInput(year, day, part string) string {
-	key := getKey(year, day, part)
+func getInput(key AOCKey) string {
 	i := aocInputs[key]
 	return i
 }

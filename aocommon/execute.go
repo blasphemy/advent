@@ -12,13 +12,12 @@ func ExecuteDefault(year, day, part string) (ExecutionResults, error) {
 	if err != nil {
 		return ExecutionResults{}, err
 	}
-	f, err := getFunc(k)
+	sol, err := getSolution(k)
 	if err != nil {
 		return ExecutionResults{}, err
 	}
-	in := getInput(k)
 	sTime := time.Now()
-	ans := f(in)
+	ans := sol.AnswerFunc(sol.DefaultInput)
 	finTime := time.Since(sTime)
 	return ExecutionResults{ans, finTime}, nil
 }
@@ -28,12 +27,12 @@ func ExecuteInput(year, day, part, input string) (ExecutionResults, error) {
 	if err != nil {
 		return ExecutionResults{}, err
 	}
-	f, err := getFunc(k)
+	sol, err := getSolution(k)
 	if err != nil {
 		return ExecutionResults{}, err
 	}
 	startTime := time.Now()
-	ans := f(input)
+	ans := sol.AnswerFunc(input)
 	finTime := time.Since(startTime)
 	return ExecutionResults{ans, finTime}, nil
 }

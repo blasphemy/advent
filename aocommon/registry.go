@@ -2,47 +2,40 @@ package aocommon
 
 import "errors"
 
-var funcRegistry map[AOCKey]AOCFunc
-var aocInputs map[AOCKey]string //example inputs
+type AOCSolution struct {
+	AnswerFunc AOCFunc
+	DefaultInput string
+}
+
+var solutionRegistry map[AOCKey]AOCSolution
 
 func init() {
-	funcRegistry = make(map[AOCKey]AOCFunc)
-	aocInputs = make(map[AOCKey]string)
+	solutionRegistry = make(map[AOCKey]AOCSolution)
 	importFuncs()
 }
 
 func registerWithInput(year, day, part int, input string, answerfunc AOCFunc) {
 	//this one takes ints to make it easier on me
 	k := getKey(year, day, part)
-	registerAOCFunc(k, answerfunc)
-	registerAOCInput(k, input)
+	sol := AOCSolution {
+		AnswerFunc: answerfunc,
+		DefaultInput: input,
+	}
+	solutionRegistry[k] = sol
 }
 
-func registerAOCFunc(key AOCKey, answerfunc AOCFunc) {
-	funcRegistry[key] = answerfunc
-}
-
-func registerAOCInput(key AOCKey, input string) {
-	aocInputs[key] = input
-}
-
-func getFunc(key AOCKey) (AOCFunc, error) {
-	f, ok := funcRegistry[key]
+func getSolution(key AOCKey) (AOCSolution, error) {
+	f, ok := solutionRegistry[key]
 	if !ok {
 		e := errors.New("Function Does Not Exist")
-		return nil, e
+		return AOCSolution{}, e
 	}
 	return f, nil
 }
 
-func getInput(key AOCKey) string {
-	i := aocInputs[key]
-	return i
-}
-
 func AOCAvailable() []AOCKey {
 	keys := []AOCKey{}
-	for x := range(funcRegistry) {
+	for x := range(solutionRegistry) {
 		keys = append(keys,x)
 	}
 	return keys

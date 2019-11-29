@@ -2,23 +2,22 @@ package y2015d2
 
 import (
 	"log"
+	"aoc2/aocommon/solutions"
 	"sort"
 	"strconv"
 	"strings"
 )
 
+var Solution = solutions.AOCSolution{
+	Answer1Func: getTotalAreaFromInput,
+	Answer2Func: getTotalRibbonFromInput,
+	DefaultInput: Challenge,
+}
+
 type dimensions struct {
 	l int
 	w int
 	h int
-}
-
-func Answer1(i string) int {
-	return getTotalAreaFromInput(i)
-}
-
-func Answer2(i string) int {
-	return getTotalRibbonFromInput(i)
 }
 
 func getTotalAreaFromInput(i string) int {

@@ -1,42 +1,26 @@
 package aocommon
 
 import "errors"
+import "aoc2/aocommon/solutions"
 
-type AOCSolution struct {
-	Answer1Func  AOCFunc
-	Answer2Func  AOCFunc
-	DefaultInput string
-}
-
-var solutionRegistry map[AOCKey]AOCSolution
+var solutionRegistry map[AOCKey]solutions.AOCSolution
 
 func init() {
-	solutionRegistry = make(map[AOCKey]AOCSolution)
-	importFuncs()
+	solutionRegistry = make(map[AOCKey]solutions.AOCSolution)
+	registerAll()
 }
 
-func (s *AOCSolution) Answer(part int) AOCFunc {
-	switch part {
-	case 1:
-		return s.Answer1Func
-	case 2:
-		return s.Answer2Func
-	default:
-		return s.Answer1Func
-	}
-}
-
-func RegisterSolution(year, day int, solution AOCSolution) {
+func registerSolution(year, day int, solution solutions.AOCSolution) {
 	//this one takes ints to make it easier on me
 	k := getKey(year, day)
 	solutionRegistry[k] = solution
 }
 
-func getSolution(key AOCKey) (AOCSolution, error) {
+func getSolution(key AOCKey) (solutions.AOCSolution, error) {
 	f, ok := solutionRegistry[key]
 	if !ok {
 		e := errors.New("Function Does Not Exist")
-		return AOCSolution{}, e
+		return solutions.AOCSolution{}, e
 	}
 	return f, nil
 }

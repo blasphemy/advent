@@ -3,7 +3,8 @@ package aocommon
 import "errors"
 
 type AOCSolution struct {
-	AnswerFunc AOCFunc
+	Answer1Func  AOCFunc
+	Answer2Func  AOCFunc
 	DefaultInput string
 }
 
@@ -14,11 +15,23 @@ func init() {
 	importFuncs()
 }
 
-func registerWithInput(year, day, part int, input string, answerfunc AOCFunc) {
+func (s *AOCSolution) Answer(part int) AOCFunc {
+	switch part {
+	case 1:
+		return s.Answer1Func
+	case 2:
+		return s.Answer2Func
+	default:
+		return s.Answer1Func
+	}
+}
+
+func registerWithInput(year, day int, input string, answer1func AOCFunc, answer2func AOCFunc) {
 	//this one takes ints to make it easier on me
-	k := getKey(year, day, part)
-	sol := AOCSolution {
-		AnswerFunc: answerfunc,
+	k := getKey(year, day)
+	sol := AOCSolution{
+		Answer1Func:  answer1func,
+		Answer2Func:  answer2func,
 		DefaultInput: input,
 	}
 	solutionRegistry[k] = sol
@@ -35,8 +48,8 @@ func getSolution(key AOCKey) (AOCSolution, error) {
 
 func AOCAvailable() []AOCKey {
 	keys := []AOCKey{}
-	for x := range(solutionRegistry) {
-		keys = append(keys,x)
+	for x := range solutionRegistry {
+		keys = append(keys, x)
 	}
 	return keys
 }

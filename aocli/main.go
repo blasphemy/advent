@@ -2,14 +2,13 @@ package main
 
 import "github.com/urfave/cli/v2"
 
-
 import "os"
 
 import "log"
 
 func main() {
 	app := &cli.App{
-		Name: "aocli",
+		Name:  "aocli",
 		Usage: "Advent Of Code CLI Runner",
 		Commands: []*cli.Command{
 			runCMD,

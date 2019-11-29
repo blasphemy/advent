@@ -18,7 +18,7 @@ func main() {
 	year := arg[0]
 	day := arg[1]
 	part := arg[2]
-	ans, err,dur := aocommon.ExecuteDefault(year,day,part)
+	ans,dur,err := aocommon.ExecuteDefault(year,day,part)
 	if err != nil {
 		log.Println(err.Error())
 		os.Exit(1)

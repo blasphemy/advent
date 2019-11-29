@@ -32,7 +32,7 @@ func registerAOCInput(year,day,part,input string) {
 	aocInputs[key] = input
 }
 
-func GetFunc(year,day,part string) (AOCFunc,error) {
+func getFunc(year,day,part string) (AOCFunc,error) {
 	key := getKey(year,day,part)
 	f, ok := funcRegistry[key]
 	if !ok {

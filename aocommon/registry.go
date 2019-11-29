@@ -26,15 +26,10 @@ func (s *AOCSolution) Answer(part int) AOCFunc {
 	}
 }
 
-func registerWithInput(year, day int, input string, answer1func AOCFunc, answer2func AOCFunc) {
+func RegisterSolution(year, day int, solution AOCSolution) {
 	//this one takes ints to make it easier on me
 	k := getKey(year, day)
-	sol := AOCSolution{
-		Answer1Func:  answer1func,
-		Answer2Func:  answer2func,
-		DefaultInput: input,
-	}
-	solutionRegistry[k] = sol
+	solutionRegistry[k] = solution
 }
 
 func getSolution(key AOCKey) (AOCSolution, error) {

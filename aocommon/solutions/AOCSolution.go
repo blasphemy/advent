@@ -1,6 +1,8 @@
 package solutions 
 
 type AOCSolution struct {
+	Year int
+	Day int
 	Answer1Func  AOCFunc
 	Answer2Func  AOCFunc
 	DefaultInput string

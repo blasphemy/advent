@@ -6,6 +6,8 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
+	Year: 2015,
+	Day: 1,
 	Answer1Func: Answer1,
 	Answer2Func: Answer2,
 	DefaultInput: Challenge,

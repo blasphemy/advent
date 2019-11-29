@@ -10,9 +10,24 @@ func init() {
 	registerAll()
 }
 
-func registerSolution(year, day int, solution solutions.AOCSolution) {
-	//this one takes ints to make it easier on me
-	k := getKey(year, day)
+func registerSolution(solution solutions.AOCSolution) {
+	if solution.Year == 0 {
+		panic("Solution missing year")
+	}
+	if solution.Day == 0 {
+		panic("Solution missing day")
+	}
+	if solution.Answer1Func == nil {
+		panic("Solution missing answer1func")
+	}
+	if solution.Answer2Func == nil {
+		panic("Solution missing answer2func")
+	
+	}
+	if solution.DefaultInput == "" {
+		panic("Solution missing default input")
+	}
+	k := getKey(solution.Year, solution.Day)
 	solutionRegistry[k] = solution
 }
 

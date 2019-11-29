@@ -1,11 +1,17 @@
-package main
+package y2015d5
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
+	"aoc2/aocommon/solutions"
 	"strings"
 )
+
+var Solution = solutions.AOCSolution{
+	Year: 2015,
+	Day: 5,
+	DefaultInput: Input,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
 
 const (
 	v1 = iota
@@ -19,16 +25,14 @@ var (
 	vowels     = []string{"a", "e", "i", "o", "u"}
 )
 
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	challengeInput := string(inputBytes)
-	wordRows := strings.Split(challengeInput, "\n")
-	answer1 := countNiceStrings(wordRows, v1)
-	answer2 := countNiceStrings(wordRows, v2)
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
+func a1(i string) int {
+	rows := strings.Split(i, "\n")
+	return countNiceStrings(rows, v1)
+}
+
+func a2(i string) int {
+	rows := strings.Split(i, "\n")
+	return countNiceStrings(rows, v2)
 }
 
 func countNiceStrings(in []string, v version) int {

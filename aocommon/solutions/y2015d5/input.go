@@ -1,4 +1,6 @@
-zgsnvdmlfuplrubt
+package y2015d5
+
+const Input = `zgsnvdmlfuplrubt
 vlhagaovgqjmgvwq
 ffumlmqwfcsyqpss
 zztdcqzqddaazdjp
@@ -997,4 +999,4 @@ hjsrvkdibdjarxxb
 sztzziuqroeidcus
 pxdfvcpvwaddrzwv
 phdqqxleqdjfgfbg
-cqfikbgxvjmnfncy
+cqfikbgxvjmnfncy`

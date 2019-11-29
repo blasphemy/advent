@@ -1,12 +1,19 @@
-package main
+package y2015d6
 
 import (
-	"fmt"
-	"io/ioutil"
+	"aoc2/aocommon/solutions"
 	"log"
 	"strconv"
 	"strings"
 )
+
+var Solution = solutions.AOCSolution{
+	Year: 2015,
+	Day: 6,
+	Answer1Func: a1,
+	Answer2Func: a2,
+	DefaultInput: INPUT,
+}
 
 type version int
 
@@ -15,19 +22,16 @@ const (
 	v2 = iota
 )
 
-func main() {
-	lights1 := &[1000][1000]int{}
-	lights2 := &[1000][1000]int{}
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	challengeTxt := string(inputBytes)
-	executeCommands(challengeTxt, lights1, v1)
-	executeCommands(challengeTxt, lights2, v2)
-	answer1 := countLit(lights1)
-	answer2 := countLit(lights2)
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
+func a1(i string) int {
+	lights := &[1000][1000]int{}
+	executeCommands(i, lights, v1)
+	return countLit(lights)
+}
+
+func a2(i string) int {
+	lights := &[1000][1000]int{}
+	executeCommands(i, lights, v2)
+	return countLit(lights)
 }
 
 func turnOnRange(lightarray *[1000][1000]int, v version, x1 int, y1 int, x2 int, y2 int) {

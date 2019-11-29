@@ -1,4 +1,6 @@
-turn on 887,9 through 959,629
+package y2015d6
+
+const INPUT = `turn on 887,9 through 959,629
 turn on 454,398 through 844,448
 turn off 539,243 through 559,965
 turn off 370,819 through 676,868
@@ -297,4 +299,4 @@ turn off 225,603 through 483,920
 toggle 717,493 through 930,875
 toggle 534,948 through 599,968
 turn on 522,730 through 968,950
-turn off 102,229 through 674,529
+turn off 102,229 through 674,529`

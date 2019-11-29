@@ -2,11 +2,10 @@ package aocommon
 
 import "errors"
 
-
 var funcRegistry map[AOCKey]AOCFunc
 var aocInputs map[AOCKey]string //example inputs
 
-func InitRegistry() {
+func init() {
 	funcRegistry = make(map[AOCKey]AOCFunc)
 	aocInputs = make(map[AOCKey]string)
 	importFuncs()
@@ -14,7 +13,7 @@ func InitRegistry() {
 
 func registerWithInput(year, day, part int, input string, answerfunc AOCFunc) {
 	//this one takes ints to make it easier on me
-	k := getKey(year,day,part)
+	k := getKey(year, day, part)
 	registerAOCFunc(k, answerfunc)
 	registerAOCInput(k, input)
 }

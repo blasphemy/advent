@@ -8,7 +8,7 @@ type AOCKey struct {
 	Part int
 }
 
-func getKeyFromStrings(year, day, part string) (AOCKey,error) {
+func getKeyFromStrings(year, day, part string) (AOCKey, error) {
 	y, err := strconv.Atoi(year)
 	if err != nil {
 		return AOCKey{}, err
@@ -21,10 +21,10 @@ func getKeyFromStrings(year, day, part string) (AOCKey,error) {
 	if err != nil {
 		return AOCKey{}, err
 	}
-	return getKey(y,d,p), nil
+	return getKey(y, d, p), nil
 }
 
-func getKey(year,day,part int) AOCKey {
+func getKey(year, day, part int) AOCKey {
 	return AOCKey{
 		Year: year,
 		Day:  day,

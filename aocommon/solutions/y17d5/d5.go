@@ -1,29 +1,28 @@
-package main
+package y17d5
 
 import (
-	"fmt"
-	"io/ioutil"
+	"advent/aocommon/solutions"
 	"log"
 	"strconv"
 	"strings"
-	"time"
 )
 
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	rows := inputToIntSlice(string(inputBytes))
-	rows2 := inputToIntSlice(string(inputBytes))
-	t := time.Now()
-	answer1 := countStepsOut(rows)
-	d1 := time.Since(t)
-	t = time.Now()
-	answer2 := countStepsOutV2(rows2)
-	d2 := time.Since(t)
-	fmt.Printf("Part 1: %d (in %s)\n", answer1, d1)
-	fmt.Printf("Part 2: %d (in %s)\n", answer2, d2)
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 5,
+	DefaultInput: input,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
+
+func a1(i string) int {
+	rows := inputToIntSlice(i)
+	return countStepsOut(rows)
+}
+
+func a2(i string) int {
+	rows := inputToIntSlice(i)
+	return countStepsOutV2(rows)
 }
 
 func inputToIntSlice(in string) []int {

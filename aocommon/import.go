@@ -11,6 +11,7 @@ import (
 	"advent/aocommon/solutions/y2017d1"
 	"advent/aocommon/solutions/y17d2"
 	"advent/aocommon/solutions/y17d3"
+	"advent/aocommon/solutions/y17d4"
 )
 
 func registerAll() {
@@ -24,4 +25,5 @@ func registerAll() {
 	registerSolution(y2017d1.Solution)
 	registerSolution(y17d2.Solution)
 	registerSolution(y17d3.Solution)
+	registerSolution(y17d4.Solution)
 }

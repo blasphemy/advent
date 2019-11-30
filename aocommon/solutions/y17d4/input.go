@@ -1,4 +1,6 @@
-bdwdjjo avricm cjbmj ran lmfsom ivsof
+package y17d4
+
+const input = `bdwdjjo avricm cjbmj ran lmfsom ivsof
 mxonybc fndyzzi gmdp gdfyoi inrvhr kpuueel wdpga vkq
 bneh ylltsc vhryov lsd hmruxy ebnh pdln vdprrky
 fumay zbccai qymavw zwoove hqpd rcxyvy
@@ -509,4 +511,4 @@ hgy zudelp ickc drfjgn iyws xhc
 zzv wik iorhat qkb kjb lykdz vrce yjsjwj
 gyw xzgbi efus uuy
 hwcy ujdun bjjuvd jbdvju onnk xeyy mmp onkn qyzl
-jwfm ptjwrbl hhuv uolz adyweh qpj wxyogp igvnojq jmfw pqs fsnirby
+jwfm ptjwrbl hhuv uolz adyweh qpj wxyogp igvnojq jmfw pqs fsnirby`

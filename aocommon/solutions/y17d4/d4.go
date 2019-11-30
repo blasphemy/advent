@@ -1,13 +1,29 @@
-package main
+package y17d4
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
+	"advent/aocommon/solutions"
 	"sort"
 	"strings"
-	"time"
 )
+
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 4,
+	DefaultInput: input,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
+
+func a1(i string) int {
+	rows := strings.Split(i, "\n")
+	return countSecurePhrases(rows,v1)
+}
+
+
+func a2(i string) int {
+	rows := strings.Split(i, "\n")
+	return countSecurePhrases(rows,v2)
+}
 
 type version int
 
@@ -15,22 +31,6 @@ const (
 	v1 = iota
 	v2 = iota
 )
-
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	challengeInput := string(inputBytes)
-	rows := strings.Split(challengeInput, "\n")
-	t := time.Now()
-	answer1 := countSecurePhrases(rows, v1)
-	d1 := time.Since(t)
-	t = time.Now()
-	answer2 := countSecurePhrases(rows, v2)
-	d2 := time.Since(t)
-	fmt.Printf("Part 1: %d (in %s)\nPart 2: %d (in %s)\n", answer1, d1, answer2, d2)
-}
 
 func countSecurePhrases(in []string, v version) int {
 	counter := 0

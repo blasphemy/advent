@@ -2,9 +2,6 @@ package y17d9
 
 import (
 	"advent/aocommon/solutions"
-	"fmt"
-	"io/ioutil"
-	"log"
 	"strconv"
 	"strings"
 )
@@ -25,15 +22,6 @@ func a1(in string) string {
 func a2(in string) string {
 	_, ans := score(in)
 	return strconv.Itoa(ans)
-}
-
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	answer1, answer2 := score(string(inputBytes))
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
 }
 
 func score(in string) (int, int) {

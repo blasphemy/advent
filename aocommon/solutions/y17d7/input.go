@@ -1,4 +1,6 @@
-keztg (7)
+package y17d7
+
+const input = `keztg (7)
 uwbtawx (9)
 mgyhaax (46)
 fuvokrr (14) -> pnjbsm, glrua
@@ -1449,4 +1451,4 @@ hpltoci (199) -> qczhlyf, mfzvywf
 sdbmop (35) -> vtkgj, jovkydi
 nyejrrv (89)
 negkd (266) -> zwoot, mpmue
-ykudi (46)
+ykudi (46)`

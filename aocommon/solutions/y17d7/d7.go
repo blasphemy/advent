@@ -1,12 +1,22 @@
-package main
+package y17d7
 
 import (
 	"fmt"
+	"strconv"
+	"advent/aocommon/solutions"
 	"io/ioutil"
 	"log"
 	"strings"
 	"time"
 )
+
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 7,
+	Answer1Func: a1,
+	Answer2Func: a2,
+	DefaultInput: input,
+}
 
 type process struct {
 	name     string
@@ -24,6 +34,16 @@ type parsedLine struct {
 var (
 	processes = make(map[string]*process)
 )
+
+func a1(i string) string {
+	ans,_ := getAnswers(i)
+	return ans
+}
+
+func a2(i string) string {
+	_,ans := getAnswers(i)
+	return strconv.Itoa(ans)
+}
 
 func main() {
 	startTime := time.Now()

@@ -2,7 +2,7 @@ package main
 
 import "github.com/urfave/cli/v2"
 
-import "aoc2/aocommon"
+import "advent/aocommon"
 
 import "fmt"
 

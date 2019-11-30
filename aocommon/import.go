@@ -1,14 +1,14 @@
 package aocommon
 
 import (
-	"aoc2/aocommon/solutions/y2015d1"
-	"aoc2/aocommon/solutions/y2015d2"
-	"aoc2/aocommon/solutions/y2015d3"
-	"aoc2/aocommon/solutions/y2015d4"
-	"aoc2/aocommon/solutions/y2015d5"
-	"aoc2/aocommon/solutions/y2015d6"
-	"aoc2/aocommon/solutions/y2016d1"
-	"aoc2/aocommon/solutions/y2017d1"
+	"advent/aocommon/solutions/y2015d1"
+	"advent/aocommon/solutions/y2015d2"
+	"advent/aocommon/solutions/y2015d3"
+	"advent/aocommon/solutions/y2015d4"
+	"advent/aocommon/solutions/y2015d5"
+	"advent/aocommon/solutions/y2015d6"
+	"advent/aocommon/solutions/y2016d1"
+	"advent/aocommon/solutions/y2017d1"
 )
 
 func registerAll() {

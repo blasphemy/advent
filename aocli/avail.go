@@ -3,7 +3,7 @@ package main
 import "github.com/urfave/cli/v2"
 import "fmt"
 
-import "aoc2/aocommon"
+import "advent/aocommon"
 
 var availCMD = &cli.Command{
 	Name:   "avail",

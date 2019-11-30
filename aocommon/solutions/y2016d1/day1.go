@@ -1,7 +1,7 @@
 package y2016d1
 
 import (
-	"aoc2/aocommon/solutions"
+	"advent/aocommon/solutions"
 	"log"
 	"math"
 	"strconv"

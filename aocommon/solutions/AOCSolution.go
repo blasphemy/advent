@@ -1,5 +1,7 @@
 package solutions
 
+type AOCFunc func(string) int
+
 type AOCSolution struct {
 	Year         int
 	Day          int

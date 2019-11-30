@@ -1,4 +1,4 @@
-module aoc2
+module advent
 
 go 1.13
 

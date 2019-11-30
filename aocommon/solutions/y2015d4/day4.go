@@ -1,7 +1,7 @@
 package y2015d4
 
 import (
-	"aoc2/aocommon/solutions"
+	"advent/aocommon/solutions"
 	"crypto/md5"
 	"fmt"
 	"strconv"

@@ -1,7 +1,7 @@
 package aocommon
 
 import "errors"
-import "aoc2/aocommon/solutions"
+import "advent/aocommon/solutions"
 
 import "sort"
 

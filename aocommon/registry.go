@@ -3,6 +3,8 @@ package aocommon
 import "errors"
 import "aoc2/aocommon/solutions"
 
+import "sort"
+
 var solutionRegistry map[AOCKey]solutions.AOCSolution
 
 func init() {
@@ -45,5 +47,9 @@ func AOCAvailable() []AOCKey {
 	for x := range solutionRegistry {
 		keys = append(keys, x)
 	}
-	return keys
+	kset := &keyset{
+		keys: keys,
+	}
+	sort.Sort(kset)
+	return kset.keys
 }

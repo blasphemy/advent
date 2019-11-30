@@ -1,21 +1,32 @@
-package main
+package y17d6
 
 import (
-	"fmt"
-	"io/ioutil"
+	"advent/aocommon/solutions"
 	"log"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	initialState := inputToArr(string(inputBytes))
-	answer1, answer2 := balance(initialState)
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
+const input = "10	3	15	10	5	15	5	15	9	2	5	8	5	2	3	6"
+
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 6,
+	DefaultInput: input,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
+
+func a1(i string) int {
+	istate := inputToArr(i)
+	ans1,_ := balance(istate)
+	return ans1
+}
+
+func a2(i string) int {
+	istate := inputToArr(i)
+	_,ans2 := balance(istate)
+	return ans2
 }
 
 func balance(in []int) (int, int) {

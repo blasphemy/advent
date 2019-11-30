@@ -2,29 +2,28 @@ package y17d4
 
 import (
 	"advent/aocommon/solutions"
-	"strconv"
 	"sort"
+	"strconv"
 	"strings"
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 17,
-	Day: 4,
+	Year:         17,
+	Day:          4,
 	DefaultInput: input,
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 func a1(i string) string {
 	rows := strings.Split(i, "\n")
-	ans := countSecurePhrases(rows,v1)
+	ans := countSecurePhrases(rows, v1)
 	return strconv.Itoa(ans)
 }
 
-
 func a2(i string) string {
 	rows := strings.Split(i, "\n")
-	ans := countSecurePhrases(rows,v2)
+	ans := countSecurePhrases(rows, v2)
 	return strconv.Itoa(ans)
 }
 

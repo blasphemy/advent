@@ -8,11 +8,11 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 17,
-	Day: 5,
+	Year:         17,
+	Day:          5,
 	DefaultInput: input,
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 func a1(i string) string {

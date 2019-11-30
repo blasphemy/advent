@@ -10,22 +10,22 @@ import (
 const input = "10	3	15	10	5	15	5	15	9	2	5	8	5	2	3	6"
 
 var Solution = solutions.AOCSolution{
-	Year: 17,
-	Day: 6,
+	Year:         17,
+	Day:          6,
 	DefaultInput: input,
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 func a1(i string) string {
 	istate := inputToArr(i)
-	ans1,_ := balance(istate)
+	ans1, _ := balance(istate)
 	return strconv.Itoa(ans1)
 }
 
 func a2(i string) string {
 	istate := inputToArr(i)
-	_,ans2 := balance(istate)
+	_, ans2 := balance(istate)
 	return strconv.Itoa(ans2)
 }
 

@@ -34,7 +34,7 @@ func (k *keyset) Len() int {
 	return len(k.keys)
 }
 
-func (k *keyset) Less(i,j int) bool {
+func (k *keyset) Less(i, j int) bool {
 	k1 := k.keys[i]
 	k2 := k.keys[j]
 	if k1.Year < k2.Year {
@@ -49,7 +49,7 @@ func (k *keyset) Less(i,j int) bool {
 	return false
 }
 
-func (k *keyset) Swap(i,j int) {
+func (k *keyset) Swap(i, j int) {
 	k1 := k.keys[i]
 	k2 := k.keys[j]
 	k.keys[i] = k2

@@ -1,22 +1,20 @@
 package y17d2
 
 import (
+	"advent/aocommon/solutions"
 	"log"
 	"strconv"
 	"strings"
-	"advent/aocommon/solutions"
 )
 
-
-
-var Solution = solutions.AOCSolution {
-	Year: 17,
-	Day: 2,
+var Solution = solutions.AOCSolution{
+	Year:         17,
+	Day:          2,
 	DefaultInput: input,
-	Answer1Func: getAnswer1,
-	Answer2Func: getAnswer2,
+	Answer1Func:  getAnswer1,
+	Answer2Func:  getAnswer2,
 }
- 
+
 func getAnswer1(input string) string {
 	rows := strings.Split(input, "\n")
 	sum := 0

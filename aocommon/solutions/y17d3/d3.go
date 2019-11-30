@@ -1,9 +1,9 @@
 package y17d3
 
 import (
-	"strconv"
 	"advent/aocommon/solutions"
 	"math"
+	"strconv"
 )
 
 const (
@@ -11,11 +11,11 @@ const (
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 17,
-	Day: 3,
+	Year:         17,
+	Day:          3,
 	DefaultInput: challengeInput,
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 func a1(i string) string {

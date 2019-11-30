@@ -2,17 +2,17 @@ package y17d8
 
 import (
 	"advent/aocommon/solutions"
+	"fmt"
 	"strconv"
 	"strings"
-	"fmt"
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 17,
-	Day: 8,
+	Year:         17,
+	Day:          8,
 	DefaultInput: input,
-	Answer1Func: a1,
-	Answer2Func: a2,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
 }
 
 type instruction struct {

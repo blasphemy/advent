@@ -9,7 +9,7 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
-	Year:         2015,
+	Year:         15,
 	Day:          4,
 	DefaultInput: "bgvyzdsv",
 	Answer1Func:  a1,

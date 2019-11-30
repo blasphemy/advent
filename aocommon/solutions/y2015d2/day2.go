@@ -9,7 +9,7 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
-	Year:         2015,
+	Year:         15,
 	Day:          2,
 	Answer1Func:  getTotalAreaFromInput,
 	Answer2Func:  getTotalRibbonFromInput,

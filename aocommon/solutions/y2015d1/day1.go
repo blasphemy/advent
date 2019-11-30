@@ -6,7 +6,7 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
-	Year:         2015,
+	Year:         15,
 	Day:          1,
 	Answer1Func:  Answer1,
 	Answer2Func:  Answer2,

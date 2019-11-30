@@ -9,7 +9,7 @@ import (
 )
 
 var Solution = solutions.AOCSolution{
-	Year: 2016,
+	Year: 16,
 	Day: 1,
 	DefaultInput: INPUT,
 	Answer1Func: findDistanceV1,

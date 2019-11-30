@@ -7,12 +7,13 @@ https://adventofcode.com
 
 | Year | Day | Status   |
 |------|-----|----------|
-| 2015 | 1   | Done     |
-| 2015 | 2   | Done     |
-| 2015 | 3   | Done     |
-| 2015 | 4   | Done     |
-| 2015 | 5   | Done     |
-| 2015 | 6   | Done     |
-| 2015 | 7   | NOT DONE |
-| 2016 | 1   | Done     |
-| 2017 | 1   | Done     |
+| 15   | 1   | Done     |
+| 15   | 2   | Done     |
+| 15   | 3   | Done     |
+| 15   | 4   | Done     |
+| 15   | 5   | Done     |
+| 15   | 6   | Done     |
+| 15   | 7   | Not Done |
+| 16   | 1   | Done     |
+| 17   | 1   | Done     |
+| 17   | 2   | Done     |

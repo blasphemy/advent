@@ -1,25 +1,22 @@
-package main
+package y17d2
 
 import (
-	"fmt"
-	"io/ioutil"
 	"log"
 	"strconv"
 	"strings"
+	"advent/aocommon/solutions"
 )
 
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	challengeInput := string(inputBytes)
-	answer1 := getAnswer1(challengeInput)
-	answer2 := getAnswer2(challengeInput)
-	fmt.Printf("Part 1: %d\n", answer1)
-	fmt.Printf("Part 2: %d\n", answer2)
-}
 
+
+var Solution = solutions.AOCSolution {
+	Year: 17,
+	Day: 2,
+	DefaultInput: input,
+	Answer1Func: getAnswer1,
+	Answer2Func: getAnswer2,
+}
+ 
 func getAnswer1(input string) int {
 	rows := strings.Split(input, "\n")
 	sum := 0

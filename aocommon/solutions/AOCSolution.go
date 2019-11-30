@@ -5,8 +5,8 @@ type AOCFunc func(string) int
 type AOCSolution struct {
 	Year         int
 	Day          int
-	Answer1Func  AOCFunc
-	Answer2Func  AOCFunc
+	Answer1Func  func(string) int
+	Answer2Func  func(string) int
 	DefaultInput string
 }
 

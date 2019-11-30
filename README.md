@@ -14,3 +14,4 @@ https://adventofcode.com
 | 2015 | 5   | Done     |
 | 2015 | 6   | Done     |
 | 2015 | 7   | NOT DONE |
+| 2016 | 1   | Done     |

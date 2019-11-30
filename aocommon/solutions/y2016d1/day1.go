@@ -1,27 +1,26 @@
-package main
+package y2016d1
 
 import (
-	"fmt"
-	"io/ioutil"
+	"aoc2/aocommon/solutions"
 	"log"
 	"math"
 	"strconv"
 	"strings"
 )
 
+var Solution = solutions.AOCSolution{
+	Year: 2016,
+	Day: 1,
+	DefaultInput: INPUT,
+	Answer1Func: findDistanceV1,
+	Answer2Func: findDistanceV2,
+}
+
+const INPUT = "R4, R5, L5, L5, L3, R2, R1, R1, L5, R5, R2, L1, L3, L4, R3, L1, L1, R2, R3, R3, R1, L3, L5, R3, R1, L1, R1, R2, L1, L4, L5, R4, R2, L192, R5, L2, R53, R1, L5, R73, R5, L5, R186, L3, L2, R1, R3, L3, L3, R1, L4, L2, R3, L5, R4, R3, R1, L1, R5, R2, R1, R1, R1, R3, R2, L1, R5, R1, L5, R2, L2, L4, R3, L1, R4, L5, R4, R3, L5, L3, R4, R2, L5, L5, R2, R3, R5, R4, R2, R1, L1, L5, L2, L3, L4, L5, L4, L5, L1, R3, R4, R5, R3, L5, L4, L3, L1, L4, R2, R5, R5, R4, L2, L4, R3, R1, L2, R5, L5, R1, R1, L1, L5, L5, L2, L1, R5, R2, L4, L1, R4, R3, L3, R1, R5, L1, L4, R2, L3, R5, R3, R1, L3"
+
 type place struct {
 	x int
 	y int
-}
-
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	answer1 := findDistanceV1(string(inputBytes))
-	answer2 := findDistanceV2(string(inputBytes))
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
 }
 
 func findDistanceV1(in string) int {

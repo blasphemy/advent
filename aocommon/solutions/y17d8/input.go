@@ -1,4 +1,6 @@
-aj dec -520 if icd < 9
+package y17d8
+
+const input = `aj dec -520 if icd < 9
 z dec -500 if b <= 2
 zz dec 628 if z >= 499
 db dec -818 if u >= 0
@@ -997,4 +999,4 @@ db dec 455 if gl == -657
 db inc -223 if esh <= 3551
 ls inc 245 if w != 3020
 zmq inc 495 if uol >= -3121
-tft inc -704 if icd == 3150
+tft inc -704 if icd == 3150`

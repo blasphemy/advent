@@ -1,12 +1,19 @@
-package main
+package y17d8
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
+	"advent/aocommon/solutions"
+	"strconv"
 	"strings"
-	"time"
+	"fmt"
 )
+
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 8,
+	DefaultInput: input,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
 
 type instruction struct {
 	target           string
@@ -17,15 +24,14 @@ type instruction struct {
 	conditionAmount  int
 }
 
-func main() {
-	t := time.Now()
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	answer1, answer2 := runInstructions(string(inputBytes))
-	d := time.Since(t)
-	fmt.Printf("Part 1: %d\nPart 2: %d\nFinished in: %s\n", answer1, answer2, d)
+func a1(i string) string {
+	ans, _ := runInstructions(i)
+	return strconv.Itoa(ans)
+}
+
+func a2(i string) string {
+	_, ans := runInstructions(i)
+	return strconv.Itoa(ans)
 }
 
 func runInstructions(in string) (int, int) {

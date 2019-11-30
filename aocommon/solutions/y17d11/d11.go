@@ -1,24 +1,32 @@
-package main
+package y17d11
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
+	"advent/aocommon/solutions"
+	"strconv"
 	"strings"
 )
+
+var Solution = solutions.AOCSolution{
+	Year:         17,
+	Day:          11,
+	DefaultInput: input,
+	Answer1Func:  a1,
+	Answer2Func:  a2,
+}
+
+func a1(i string) string {
+	ans, _ := processInstructions(i)
+	return strconv.Itoa(ans)
+}
+
+func a2(i string) string {
+	_, ans := processInstructions(i)
+	return strconv.Itoa(ans)
+}
 
 type position struct {
 	x int
 	y int
-}
-
-func main() {
-	inputBytes, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	answer1, answer2 := processInstructions(string(inputBytes))
-	fmt.Printf("Part 1: %d\nPart 2: %d\n", answer1, answer2)
 }
 
 func processInstructions(in string) (int, int) {

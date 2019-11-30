@@ -2,6 +2,7 @@ package y2015d3
 
 import (
 	"advent/aocommon/solutions"
+	"strconv"
 	"strings"
 )
 
@@ -20,7 +21,7 @@ type coard struct {
 	y int
 }
 
-func getUniqueLocationsFromInstructions(input string) int {
+func getUniqueLocationsFromInstructions(input string) string {
 	locations := make(map[coard]bool)
 	currentCoard := coard{0, 0}
 	locations[currentCoard] = true
@@ -38,10 +39,10 @@ func getUniqueLocationsFromInstructions(input string) int {
 		}
 		locations[currentCoard] = true
 	}
-	return len(locations)
+	return strconv.Itoa(len(locations))
 }
 
-func getUniqueLocationsFromInstructionsRobo(input string) int {
+func getUniqueLocationsFromInstructionsRobo(input string) string {
 	locations := make(map[coard]bool)
 	santaCoard := &coard{0, 0}
 	roboCoard := &coard{0, 0}
@@ -66,5 +67,5 @@ func getUniqueLocationsFromInstructionsRobo(input string) int {
 		}
 		locations[*currentCoard] = true
 	}
-	return len(locations)
+	return strconv.Itoa(len(locations))
 }

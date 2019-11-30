@@ -23,7 +23,7 @@ type place struct {
 	y int
 }
 
-func findDistanceV1(in string) int {
+func findDistanceV1(in string) string {
 	dir := 0
 	x := 0
 	y := 0
@@ -58,10 +58,11 @@ func findDistanceV1(in string) int {
 			x -= amount
 		}
 	}
-	return int(math.Abs(float64(x) + math.Abs(float64(y))))
+	ans := int(math.Abs(float64(x) + math.Abs(float64(y)))) //wow this is ugly what was I thinking
+	return strconv.Itoa(ans)
 }
 
-func findDistanceV2(in string) int {
+func findDistanceV2(in string) string {
 	dir := 0
 	x := 0
 	y := 0
@@ -111,10 +112,10 @@ func findDistanceV2(in string) int {
 			}
 			p := place{x, y}
 			if places[p] {
-				return int(math.Abs(float64(x) + math.Abs(float64(y))))
+				return strconv.Itoa(int(math.Abs(float64(x) + math.Abs(float64(y)))))
 			}
 			places[p] = true
 		}
 	}
-	return 0
+	return "0"
 }

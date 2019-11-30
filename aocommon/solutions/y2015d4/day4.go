@@ -16,12 +16,12 @@ var Solution = solutions.AOCSolution{
 	Answer2Func:  a2,
 }
 
-func a1(in string) int {
-	return getKeyForInput(in, "00000")
+func a1(in string) string {
+	return strconv.Itoa(getKeyForInput(in, "00000"))
 }
 
-func a2(in string) int {
-	return getKeyForInput(in, "000000")
+func a2(in string) string {
+	return strconv.Itoa(getKeyForInput(in, "000000"))
 }
 
 //This is probably the slowest possible way to do this in go, but oh well.

@@ -1,12 +1,12 @@
 package solutions
 
-type AOCFunc func(string) int
+type AOCFunc func(string) string
 
 type AOCSolution struct {
 	Year         int
 	Day          int
-	Answer1Func  func(string) int
-	Answer2Func  func(string) int
+	Answer1Func  func(string) string
+	Answer2Func  func(string) string
 	DefaultInput string
 }
 

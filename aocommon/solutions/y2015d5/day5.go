@@ -2,6 +2,7 @@ package y2015d5
 
 import (
 	"advent/aocommon/solutions"
+	"strconv"
 	"strings"
 )
 
@@ -25,14 +26,14 @@ var (
 	vowels     = []string{"a", "e", "i", "o", "u"}
 )
 
-func a1(i string) int {
+func a1(i string) string {
 	rows := strings.Split(i, "\n")
-	return countNiceStrings(rows, v1)
+	return strconv.Itoa(countNiceStrings(rows, v1))
 }
 
-func a2(i string) int {
+func a2(i string) string {
 	rows := strings.Split(i, "\n")
-	return countNiceStrings(rows, v2)
+	return strconv.Itoa(countNiceStrings(rows, v2))
 }
 
 func countNiceStrings(in []string, v version) int {

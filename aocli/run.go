@@ -11,6 +11,10 @@ var runCMD = &cli.Command{
 	Usage:     "run a solution with default input",
 	Action:    runAction,
 	ArgsUsage: "<year> <day> <part>",
+	Aliases: []string{
+		"r",
+		"ru",
+	},
 }
 
 func runAction(c *cli.Context) error {
@@ -25,7 +29,7 @@ func runAction(c *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Answer: %d\n", res.Answer)
+	fmt.Printf("Answer: %s\n", res.Answer)
 	fmt.Printf("Execution Time: %s\n", res.ExecutionTime)
 	return nil
 }

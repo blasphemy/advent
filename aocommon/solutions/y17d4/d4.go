@@ -2,6 +2,7 @@ package y17d4
 
 import (
 	"advent/aocommon/solutions"
+	"strconv"
 	"sort"
 	"strings"
 )
@@ -14,15 +15,17 @@ var Solution = solutions.AOCSolution{
 	Answer2Func: a2,
 }
 
-func a1(i string) int {
+func a1(i string) string {
 	rows := strings.Split(i, "\n")
-	return countSecurePhrases(rows,v1)
+	ans := countSecurePhrases(rows,v1)
+	return strconv.Itoa(ans)
 }
 
 
-func a2(i string) int {
+func a2(i string) string {
 	rows := strings.Split(i, "\n")
-	return countSecurePhrases(rows,v2)
+	ans := countSecurePhrases(rows,v2)
+	return strconv.Itoa(ans)
 }
 
 type version int

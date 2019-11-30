@@ -5,7 +5,7 @@ import "time"
 import "strconv"
 
 type ExecutionResults struct {
-	Answer        int
+	Answer        string
 	ExecutionTime time.Duration
 }
 

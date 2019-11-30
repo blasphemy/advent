@@ -15,14 +15,16 @@ var Solution = solutions.AOCSolution{
 	Answer2Func: a2,
 }
 
-func a1(i string) int {
+func a1(i string) string {
 	rows := inputToIntSlice(i)
-	return countStepsOut(rows)
+	ans := countStepsOut(rows)
+	return strconv.Itoa(ans)
 }
 
-func a2(i string) int {
+func a2(i string) string {
 	rows := inputToIntSlice(i)
-	return countStepsOutV2(rows)
+	ans := countStepsOutV2(rows)
+	return strconv.Itoa(ans)
 }
 
 func inputToIntSlice(in string) []int {

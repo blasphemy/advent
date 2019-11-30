@@ -17,7 +17,7 @@ var Solution = solutions.AOCSolution{
 	DefaultInput: input,
 }
 
-func getNumberPart1(input string) int {
+func getNumberPart1(input string) string {
 	pieces := strings.Split(input, "")
 	sum := 0
 	for x, y := range pieces {
@@ -34,10 +34,10 @@ func getNumberPart1(input string) int {
 			sum = sum + n
 		}
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
-func getNumberPart2(input string) int {
+func getNumberPart2(input string) string {
 	pieces := strings.Split(input, "")
 	sum := 0
 	for x, y := range pieces {
@@ -53,5 +53,5 @@ func getNumberPart2(input string) int {
 			sum = sum + n
 		}
 	}
-	return sum
+	return strconv.Itoa(sum)
 }

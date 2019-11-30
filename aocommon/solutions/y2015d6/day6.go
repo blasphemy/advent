@@ -22,16 +22,18 @@ const (
 	v2 = iota
 )
 
-func a1(i string) int {
+func a1(i string) string {
 	lights := &[1000][1000]int{}
 	executeCommands(i, lights, v1)
-	return countLit(lights)
+	ans := countLit(lights)
+	return strconv.Itoa(ans)
 }
 
-func a2(i string) int {
+func a2(i string) string {
 	lights := &[1000][1000]int{}
 	executeCommands(i, lights, v2)
-	return countLit(lights)
+	ans := countLit(lights)
+	return strconv.Itoa(ans)
 }
 
 func turnOnRange(lightarray *[1000][1000]int, v version, x1 int, y1 int, x2 int, y2 int) {

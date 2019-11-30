@@ -18,15 +18,15 @@ var Solution = solutions.AOCSolution{
 	Answer2Func: a2,
 }
 
-func a1(i string) int {
+func a1(i string) string {
 	inconvert, _ := strconv.Atoi(i) //bad me
 	c := getSpiralCoards(inconvert)
-	return getStepsBack(c)
+	return strconv.Itoa(getStepsBack(c))
 }
 
-func a2(i string) int {
+func a2(i string) string {
 	inconvert, _ := strconv.Atoi(i)
-	return getBiggerThanInput(inconvert)
+	return strconv.Itoa(getBiggerThanInput(inconvert))
 }
 
 type coards struct {

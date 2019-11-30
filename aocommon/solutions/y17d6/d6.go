@@ -17,16 +17,16 @@ var Solution = solutions.AOCSolution{
 	Answer2Func: a2,
 }
 
-func a1(i string) int {
+func a1(i string) string {
 	istate := inputToArr(i)
 	ans1,_ := balance(istate)
-	return ans1
+	return strconv.Itoa(ans1)
 }
 
-func a2(i string) int {
+func a2(i string) string {
 	istate := inputToArr(i)
 	_,ans2 := balance(istate)
-	return ans2
+	return strconv.Itoa(ans2)
 }
 
 func balance(in []int) (int, int) {

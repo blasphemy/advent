@@ -22,7 +22,7 @@ type dimensions struct {
 	h int
 }
 
-func getTotalAreaFromInput(i string) int {
+func getTotalAreaFromInput(i string) string {
 	rows := strings.Split(i, "\n")
 	sum := 0
 	for _, x := range rows {
@@ -33,7 +33,7 @@ func getTotalAreaFromInput(i string) int {
 		a := d.getArea()
 		sum = sum + a
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
 func inputToDimensions(i string) (dimensions, error) {
@@ -75,7 +75,7 @@ func (d dimensions) getArea() int {
 	return out
 }
 
-func getTotalRibbonFromInput(i string) int {
+func getTotalRibbonFromInput(i string) string {
 	rows := strings.Split(i, "\n")
 	sum := 0
 	for _, x := range rows {
@@ -86,7 +86,7 @@ func getTotalRibbonFromInput(i string) int {
 		a := d.getRibbon()
 		sum = sum + a
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
 func (d dimensions) getRibbon() int {

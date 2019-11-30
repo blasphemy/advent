@@ -17,7 +17,7 @@ var Solution = solutions.AOCSolution {
 	Answer2Func: getAnswer2,
 }
  
-func getAnswer1(input string) int {
+func getAnswer1(input string) string {
 	rows := strings.Split(input, "\n")
 	sum := 0
 	for _, x := range rows {
@@ -30,7 +30,7 @@ func getAnswer1(input string) int {
 		diff := big - small
 		sum = sum + diff
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
 func maxMin(i []int) (int, int) {
@@ -61,7 +61,7 @@ func sliceAtoi(i []string) ([]int, error) {
 	return out, nil
 }
 
-func getAnswer2(input string) int {
+func getAnswer2(input string) string {
 	rows := strings.Split(input, "\n")
 	sum := 0
 	for _, x := range rows {
@@ -72,7 +72,7 @@ func getAnswer2(input string) int {
 		}
 		sum = sum + getDivisibleNums(nums)
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
 func getDivisibleNums(i []int) int {

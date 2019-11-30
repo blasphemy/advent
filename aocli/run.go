@@ -28,13 +28,13 @@ func runAction(c *cli.Context) error {
 	if args.Len() > 2 {
 		ps = args.Get(2)
 	}
-	res, err := runParts(ys,ds,ps)
+	res, err := runParts(ys, ds, ps)
 	if err != nil {
 		return err
 	}
-	for x,y := range res {
+	for x, y := range res {
 		if ps != "1" && ps != "2" {
-			fmt.Printf("Part %d\n",x+1)
+			fmt.Printf("Part %d\n", x+1)
 		}
 		fmt.Printf("Answer: %s\n", y.Answer)
 		fmt.Printf("Execution Time: %s\n", y.ExecutionTime)
@@ -42,22 +42,22 @@ func runAction(c *cli.Context) error {
 	return nil
 }
 
-func runParts(ys,ds,ps string) ([]aocommon.ExecutionResults,error) {
+func runParts(ys, ds, ps string) ([]aocommon.ExecutionResults, error) {
 	switch ps {
-	case "1","2":
-		res, err := aocommon.ExecuteDefault(ys,ds, ps)
+	case "1", "2":
+		res, err := aocommon.ExecuteDefault(ys, ds, ps)
 		if err != nil {
 			return []aocommon.ExecutionResults{}, err
 		}
 		return []aocommon.ExecutionResults{res}, nil
 	default:
-		res1, err := aocommon.ExecuteDefault(ys,ds,"1")
+		res1, err := aocommon.ExecuteDefault(ys, ds, "1")
 		if err != nil {
-			return []aocommon.ExecutionResults{},err
+			return []aocommon.ExecutionResults{}, err
 		}
-		res2, err := aocommon.ExecuteDefault(ys,ds,"2")
+		res2, err := aocommon.ExecuteDefault(ys, ds, "2")
 		if err != nil {
-			return []aocommon.ExecutionResults{},err
+			return []aocommon.ExecutionResults{}, err
 		}
 		return []aocommon.ExecutionResults{
 			res1,

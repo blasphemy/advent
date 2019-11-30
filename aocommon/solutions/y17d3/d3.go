@@ -1,25 +1,32 @@
-package main
+package y17d3
 
 import (
-	"fmt"
+	"strconv"
+	"advent/aocommon/solutions"
 	"math"
-	"time"
 )
 
 const (
-	challengeInput = 361527
+	challengeInput = "361527"
 )
 
-func main() {
-	t := time.Now()
-	coardinates := getSpiralCoards(challengeInput)
-	answer1 := getStepsBack(coardinates)
-	d1 := time.Since(t)
-	t = time.Now()
-	answer2 := getBiggerThanInput(challengeInput)
-	d2 := time.Since(t)
-	fmt.Printf("Part 1: %d (in %s)\n", answer1, d1)
-	fmt.Printf("Part 2: %d (in %s)\n", answer2, d2)
+var Solution = solutions.AOCSolution{
+	Year: 17,
+	Day: 3,
+	DefaultInput: challengeInput,
+	Answer1Func: a1,
+	Answer2Func: a2,
+}
+
+func a1(i string) int {
+	inconvert, _ := strconv.Atoi(i) //bad me
+	c := getSpiralCoards(inconvert)
+	return getStepsBack(c)
+}
+
+func a2(i string) int {
+	inconvert, _ := strconv.Atoi(i)
+	return getBiggerThanInput(inconvert)
 }
 
 type coards struct {

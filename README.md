@@ -13,5 +13,5 @@ https://adventofcode.com
 | 16   | 2-25  | Not Done |
 | 17   | 1-11  | Done     |
 | 17   | 12-25 | Not Done |
-| 18   | 1     | Done     |
-| 18   | 2-25  | Not Done |
+| 18   | 1-2   | Done     |
+| 18   | 3-25  | Not Done |

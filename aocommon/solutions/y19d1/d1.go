@@ -15,31 +15,14 @@ var Solution = solutions.AOCSolution{
 }
 
 func a1(i string) string {
-	nums,err := parseInput(i)
+	nums, err := parseInput(i)
 	if err != nil {
 		panic(err)
 	}
 	masses := []int{}
-	for _,x := range nums {
+	for _, x := range nums {
 		mass := getMass(x)
-		masses= append(masses,mass)
-	}
-	sum := 0
-	for _,x := range masses {
-		sum += x
-	}
-	return strconv.Itoa(sum)
-}
-
-func a2(i string) string {
-	nums,err := parseInput(i)
-	if err != nil {
-		panic(err)
-	}
-	masses := []int{}
-	for _,x := range nums {
-		mass := getMass2(x)
-		masses= append(masses,mass)
+		masses = append(masses, mass)
 	}
 	sum := 0
 	for _, x := range masses {
@@ -48,10 +31,27 @@ func a2(i string) string {
 	return strconv.Itoa(sum)
 }
 
-func parseInput(i string) ([]int,error) {
+func a2(i string) string {
+	nums, err := parseInput(i)
+	if err != nil {
+		panic(err)
+	}
+	masses := []int{}
+	for _, x := range nums {
+		mass := getMass2(x)
+		masses = append(masses, mass)
+	}
+	sum := 0
+	for _, x := range masses {
+		sum += x
+	}
+	return strconv.Itoa(sum)
+}
+
+func parseInput(i string) ([]int, error) {
 	rows := strings.Split(i, "\n")
 	res := []int{}
-	for _,x := range rows {
+	for _, x := range rows {
 		n, err := strconv.Atoi(x)
 		if err != nil {
 			return []int{}, err

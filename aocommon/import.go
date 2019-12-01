@@ -2,8 +2,6 @@ package aocommon
 
 import (
 	"advent/aocommon/solutions/y17d10"
-	"advent/aocommon/solutions/y19d1"
-	"advent/aocommon/solutions/y18d2"
 	"advent/aocommon/solutions/y17d11"
 	"advent/aocommon/solutions/y17d2"
 	"advent/aocommon/solutions/y17d3"
@@ -14,6 +12,8 @@ import (
 	"advent/aocommon/solutions/y17d8"
 	"advent/aocommon/solutions/y17d9"
 	"advent/aocommon/solutions/y18d1"
+	"advent/aocommon/solutions/y18d2"
+	"advent/aocommon/solutions/y19d1"
 	"advent/aocommon/solutions/y2015d1"
 	"advent/aocommon/solutions/y2015d2"
 	"advent/aocommon/solutions/y2015d3"

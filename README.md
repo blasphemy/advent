@@ -15,4 +15,4 @@ https://adventofcode.com
 | 17   | 12-25 | Not Done |
 | 18   | 1-2   | Done     |
 | 18   | 3-25  | Not Done |
-| 19   | 1     | Done     |
+| 19   | 1-2   | Done     |

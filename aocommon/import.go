@@ -2,6 +2,7 @@ package aocommon
 
 import (
 	"advent/aocommon/solutions/y17d10"
+	"advent/aocommon/solutions/y19d3"
 	"advent/aocommon/solutions/y17d11"
 	"advent/aocommon/solutions/y17d2"
 	"advent/aocommon/solutions/y17d3"
@@ -48,4 +49,5 @@ func registerAll() {
 	registerSolution(y18d2.Solution)
 	registerSolution(y19d1.Solution)
 	registerSolution(y19d2.Solution)
+	registerSolution(y19d3.Solution)
 }
